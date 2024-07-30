@@ -1,37 +1,19 @@
 //task 1
-
-let number = 15;
-if (number % 3 === 0 && number % 5 === 0) {
-    console.log("FizzBuzz");
-} else if (number % 3 === 0) {
-    console.log("Fizz");
-} else if (number % 5 === 0) {
-    console.log("Buzz");
-} else {
-    console.log(number);
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+//task2
+function isPalindrome(str) {
+    const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    const reversedStr = cleanedStr.split('').reverse().join('');
+    return cleanedStr === reversedStr;
+}
+//task3
+function findGCD(a, b) {
+    if (b === 0) {
+        return a;
+    }
+    return findGCD(b, a % b);
 }
 
-// task 2
 
-if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
-    return true;
-} else {
-    return false;
-}
-
-//task 3
-let years = 5;
-let lastNumber = years % 10;
-let lastTwoNumbers = years % 100;
-
-if (lastTwoNumbers >= 11 && lastTwoNumbers <= 19) {
-    return years + " років";
-}
-
-if (lastNumber === 1) {
-    return years + " рік";
-} else if (lastNumber >= 2 && lastNumber <= 4) {
-    return years + " роки";
-} else {
-    return years + " років";
-}
